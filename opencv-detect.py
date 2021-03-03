@@ -1,3 +1,4 @@
+#run with python3 on officeserver
 import numpy as np
 import cv2
 
