@@ -1,8 +1,7 @@
-
 import numpy as np
 import cv2
 
-img = cv2.imread('images/process.png')
+img = cv2.imread('images/004.png')
 imgGry = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 height, width, channels = img.shape
 
@@ -46,16 +45,14 @@ for contour in sortedContours:
             #print("count =={:.0f} ".format( color_count) )  
             if color_count==0:
                 #print("values-{:.0f} ".format(counter),"left: ","{:.02f}px;".format(x*ratio), "top: ","{:.02f}px;".format(y*ratio), "width: ","{:.02f}px;".format(w*ratio-5), "height: ","{:.02f}px;".format(h*ratio) )
-                
-                template='<div style="position: absolute;overflow: hidden;paddingt: 0px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;"><input style="width:100%;height:100%"/></div>';
-                print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
-                
-                
+                print('<div style="position: absolute;overflow: hidden;padding-left: 5px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;"><input style="width:100%;height:100%"/></div>'.format(left=x*ratio,top=y*ratio,width=w*ratio,height=h*ratio,cellNumber=counter))
                 counter=counter+1
                 cv2.putText(img, "rectangle {:.0f}".format(counter), (x+10, y+20), cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 0, 255))
     
 
 #cv2.imshow('shapes', img)
-#cv2.imwrite('/var/www/html/upload/rect.png', img)
+cv2.imwrite('/var/www/html/upload/rect.png', img)
 #cv2.waitKey(0)
 #cv2.destroyAllWindows()
+
+
