@@ -2,7 +2,7 @@
 import numpy as np
 import cv2
 
-img = cv2.imread('images/004.png')
+img = cv2.imread('images/process.png')
 imgGry = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 height, width, channels = img.shape
 
@@ -51,7 +51,7 @@ for contour in sortedContours:
                 cv2.putText(img, "rectangle {:.0f}".format(counter), (x+10, y+20), cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 0, 255))
     
 
-#cv2.imshow('shapes', img)
-cv2.imwrite('/var/www/html/upload/rect.png', img)
+cv2.imshow('shapes', img)
+#cv2.imwrite('/var/www/html/upload/rect.png', img)
 #cv2.waitKey(0)
 #cv2.destroyAllWindows()

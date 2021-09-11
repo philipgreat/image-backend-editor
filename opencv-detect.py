@@ -38,21 +38,6 @@ for contour in sortedContours:
             #counter=counter+1
             #print("values-{:.0f} ".format(counter), x, y,w,h )
             #print("values-{:.0f} ".format(counter), x*ratio, y*ratio,w*ratio,h*ratio )
-<<<<<<< HEAD
-            #print("values-{:.0f} ".format(counter),"left: ","{:.02f}px;".format(x*ratio), "top: ","{:.02f}px;".format(y*ratio), "width: ","{:.02f}px;".format(w*ratio-5), "height: ","{:.02f}px;".format(h*ratio) )
-            subArea = imgGry[y+2:y+h-4,x+2:x+w-4]
-
-            mask = cv2.inRange(subArea, 0, 127)
-            cv2.imwrite('/var/www/html/upload/mask-{:.0f}.png'.format(counter), mask)
-            color_count = cv2.countNonZero(mask)
-            #print("count =={:.0f} ".format( color_count) )  
-            if color_count==0:
-                #print("values-{:.0f} ".format(counter),"left: ","{:.02f}px;".format(x*ratio), "top: ","{:.02f}px;".format(y*ratio), "width: ","{:.02f}px;".format(w*ratio-5), "height: ","{:.02f}px;".format(h*ratio) )
-                print('<div contenteditable style="position: absolute;overflow: hidden;padding-left: 5px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;">cell{cellNumber}</div>'.format(left=x*ratio,top=y*ratio,width=w*ratio-5,height=h*ratio,cellNumber=counter))
-                counter=counter+1
-                cv2.putText(img, "rectangle {:.0f}".format(counter), (x+10, y+20), cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 0, 255))
-    
-=======
             print("values-{:.0f} ".format(counter),"left: ","{:.02f}px;".format(x*ratio), "top: ","{:.02f}px;".format(y*ratio), "width: ","{:.02f}px;".format(w*ratio-5), "height: ","{:.02f}px;".format(h*ratio) )
             result = ocr.ocr(imgGry[y:y+h, x:x+w], cls=True)
             for line in result:
@@ -60,7 +45,6 @@ for contour in sortedContours:
 
             cv2.putText(img, "rectangle {:.0f}".format(counter), (x+10, y+20), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
 
->>>>>>> 4e9b7ed6059bc0070b9349d031b3d975f4ccec04
 
 # cv2.imshow('shapes', img)
 cv2.imwrite('/var/www/html/upload/rect.png', img)
