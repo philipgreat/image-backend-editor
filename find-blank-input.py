@@ -46,11 +46,16 @@ for contour in sortedContours:
             #print("count =={:.0f} ".format( color_count) )  
             if color_count==0:
                 #print("values-{:.0f} ".format(counter),"left: ","{:.02f}px;".format(x*ratio), "top: ","{:.02f}px;".format(y*ratio), "width: ","{:.02f}px;".format(w*ratio-5), "height: ","{:.02f}px;".format(h*ratio) )
+<<<<<<< HEAD
                 
                 template='<div style="position: absolute;overflow: hidden;paddingt: 0px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;"><input style="width:100%;height:100%"/></div>';
                 print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
                 
                 
+=======
+                template='<div style="position: absolute;overflow: hidden;paddingt: 0px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;"><input style="width:100%;height:100%"/></div>';
+                print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
+>>>>>>> 974b13300a33d50d95fe8907925806dfdd36947e
                 counter=counter+1
                 cv2.putText(img, "rectangle {:.0f}".format(counter), (x+10, y+20), cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 0, 255))
     
