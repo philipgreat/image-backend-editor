@@ -54,7 +54,7 @@ for contour in sortedContours:
                 #parameters=(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter);
                 template='<div style="position: absolute;overflow: hidden;padding: 0px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;"></div>';
                 #print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
-                styletemplate='#cell{cellNumber} {{\n\tposition: absolute;\n\toverflow: hidden;\n\tpadding: 0px;\n\tleft:{left}px; \n\ttop:{top}px; \n\twidth:{width}px; \n\theight:{height}px;}}\n'
+                styletemplate='#cell{cellNumber} {{\n\tposition: absolute;\n\toverflow: hidden;\n\tpadding: 0px;\n\tleft:{left}px; \n\ttop:{top}px; \n\twidth:{width}px; \n\theight:{height}px;\n}}\n'
                 style=style+styletemplate.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter)
                 html=html+'<div id="{counter}"> </div>\n'.format(counter=counter)
 
