@@ -56,7 +56,7 @@ for contour in sortedContours:
                 #print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
                 styletemplate='#cell{cellNumber} {{\n\tposition: absolute;\n\toverflow: hidden;\n\tpadding: 0px;\n\tleft: {left:.0f}px; \n\ttop: {top:.0f}px; \n\twidth: {width:.0f}px; \n\theight: {height:.0f}px;\n}}\n'
                 style=style+styletemplate.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter)
-                html=html+'<div id="{counter}"> </div>\n'.format(counter=counter)
+                html=html+'<div id="cell{counter}">cell{counter} </div>\n'.format(counter=counter)
 
 
                 
