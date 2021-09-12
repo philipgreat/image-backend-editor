@@ -6,8 +6,8 @@ image_path='images/process.png'
 
 img = cv2.imread(image_path)
 
-if img == None: 
-    raise Exception("could not load image !"+image_path)
+#if img == None: 
+#    raise Exception("could not load image !"+image_path)
 
 imgGry = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 height, width, channels = img.shape
