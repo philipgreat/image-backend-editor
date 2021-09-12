@@ -53,10 +53,10 @@ for contour in sortedContours:
                 
                 #parameters=(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter);
                 template='<div style="position: absolute;overflow: hidden;padding: 0px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;"></div>';
-                print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
-                styletemplate='position: absolute;overflow: hidden;padding: 0px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;'
+                #print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
+                styletemplate='#{counter} {{position: absolute;overflow: hidden;padding: 0px;left:{left}px; top:{top}px; width:{width}px; height:{height}px;}}'
                 style=style+styletemplate.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter)
-                html=html+'<div id="{counter}"> </div>'.format(counter=counter)
+                html=html+'<div id="{counter}"> </div>\n'.format(counter=counter)
 
 
                 
