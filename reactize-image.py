@@ -2,12 +2,16 @@
 import numpy as np
 import cv2
 
-image_path='images/process.png'
+image_path='images/process.jpg'
 
 img = cv2.imread(image_path)
 
-if img == None: 
-    raise Exception("could not load image !"+image_path)
+
+#print(img)
+
+
+#if img == None: 
+#    raise Exception("could not load image !"+image_path)
 
 imgGry = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 height, width, channels = img.shape
@@ -43,7 +47,7 @@ for contour in sortedContours:
         x, y , w, h = cv2.boundingRect(approx)
         aspectRatio = float(w)/h
         #print(aspectRatio)
-        if h>60:
+        if h>10:
             #counter=counter+1
             #print("values-{:.0f} ".format(counter), x, y,w,h )
             #print("values-{:.0f} ".format(counter), x*ratio, y*ratio,w*ratio,h*ratio )
