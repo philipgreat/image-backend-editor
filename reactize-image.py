@@ -2,7 +2,7 @@
 import numpy as np
 import cv2
 
-image_path='images/process.png'
+image_path='images/process.jpg'
 
 img = cv2.imread(image_path)
 
