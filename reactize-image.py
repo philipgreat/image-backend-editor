@@ -2,12 +2,16 @@
 import numpy as np
 import cv2
 
-image_path='images/process.jpg'
+image_path='images/process.png'
 
 img = cv2.imread(image_path)
 
-if img == None: 
-    raise Exception("could not load image !"+image_path)
+
+#print(img)
+
+
+#if img == None: 
+#    raise Exception("could not load image !"+image_path)
 
 imgGry = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 height, width, channels = img.shape
@@ -43,7 +47,7 @@ for contour in sortedContours:
         x, y , w, h = cv2.boundingRect(approx)
         aspectRatio = float(w)/h
         #print(aspectRatio)
-        if h>60:
+        if h>10:
             #counter=counter+1
             #print("values-{:.0f} ".format(counter), x, y,w,h )
             #print("values-{:.0f} ".format(counter), x*ratio, y*ratio,w*ratio,h*ratio )
@@ -62,7 +66,7 @@ for contour in sortedContours:
                 #print(template.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter))
                 styletemplate='#cell{cellNumber} {{\n\tposition: absolute;\n\toverflow: hidden;\n\tpadding: 0px;\n\tleft: {left:.0f}px; \n\ttop: {top:.0f}px; \n\twidth: {width:.0f}px; \n\theight: {height:.0f}px;\n}}\n'
                 style=style+styletemplate.format(left=x*ratio-2,top=y*ratio-2,width=w*ratio+4,height=h*ratio+4,cellNumber=counter)
-                html=html+'<div id="cell{counter}">cell{counter} </div>\n'.format(counter=counter)
+                html=html+'<div id="cell{counter}"> <input type="checkbox" id="{counter}"/> </div>\n'.format(counter=counter)
 
 
                 
