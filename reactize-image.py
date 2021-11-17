@@ -71,7 +71,7 @@ for contour in sortedContours:
 
                 
                 counter=counter+1
-                cv2.putText(img, "{:.0f}".format(counter-1), (x+1, y+14), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255))
+                cv2.putText(img, "{:.0f}".format(counter-1), (x+1, y+14), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255))
     
 
 print(style)
