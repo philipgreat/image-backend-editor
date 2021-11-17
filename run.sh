@@ -1,2 +1,2 @@
 git pull
-python3 find-blank-input.py 
+python3  reactize-image.py
