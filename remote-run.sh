@@ -19,4 +19,5 @@ function officeserver(){
 
 commit "make change"
 
+officeserver "cd ~/githome/image-backend-editor/ && git pull"
 officeserver "cd ~/githome/image-backend-editor/ && python3 reactize-image.py"
